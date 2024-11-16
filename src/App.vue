@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import DataCenterMap from './components/DataCenterMap.vue'
-import { DummyDataService } from './services/DummyDataService'
+import { DummyDataService} from './services/DummyDataService'
+import {Alert} from './models/Alert'
 import { ref, onMounted } from 'vue'
 
 const mapComponent = ref(null)
 const dummyService = new DummyDataService()
+const alerts = ref<Alert[]>([])
 
 onMounted(() => {
+  alerts.value = dummyService.getAlerts()
   mapComponent.value?.initMap(dummyService)
 })
 
 const handleRefresh = () => {
+  alerts.value = dummyService.getAlerts()
   mapComponent.value?.initMap(dummyService)
 }
 </script>

@@ -84,4 +84,16 @@ export class DummyDataService {
             alert.dc === dcName || alert.affected_dcs.includes(dcName)
         );
     }
+
+    getBounds(): { north: number; south: number; east: number; west: number } {
+        const lats = this.dataCenters.map(dc => dc.position.latitude);
+        const lngs = this.dataCenters.map(dc => dc.position.longitude);
+        
+        return {
+            north: Math.max(...lats),
+            south: Math.min(...lats),
+            east: Math.max(...lngs),
+            west: Math.min(...lngs)
+        };
+    }
 } 
