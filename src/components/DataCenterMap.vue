@@ -51,7 +51,7 @@ defineExpose({
 
 <style scoped>
 .map-container {
-  width: 80vw;
+  width: 95vw;
   height: 80vh;
   background-color: white;
 }

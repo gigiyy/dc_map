@@ -37,13 +37,13 @@ body, html {
 
 <style scoped>
 .app-container {
-  width: 100%;
+  width: 100vw;
+  max-width: 1200px;
   margin: 0;
   padding: 0;
 }
 
 .button-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
 }
